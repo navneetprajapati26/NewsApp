@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-Color background = Color(0xFFF6F7F7);
-Color navBarColor = Color(0xFFFFFFFF);
-Color navBarSelectedIconColor = Colors.indigo;
-Color navBarUSelectedIconColor = Color(0xE597C2FF);
+Color LightBackground = Color(0xFFD9D8D8);
+Color LightheadingColour  = Color(0xFF101010);
+Color LightScondery = Color(0xFFFFFFFF);
 
-Color headingColour  = Color(0xFF101010);
+Color DarkBackground = Color(0xFF343434);
+Color DarkScondery = Color(0xFF4F4B4B);
+Color DarkheadingColour  = Color(0xFFFFFFFF);

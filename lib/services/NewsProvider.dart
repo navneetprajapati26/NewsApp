@@ -18,6 +18,7 @@ class NewsProvider with ChangeNotifier {
   final String apiInd =
       "https://newsapi.org/v2/top-headlines?country=in&apiKey=7a2210ca89e24d65ae95a55a5c3e9f09";
   Future<void> getTopHeadlines() async {
+    print("News Provider call");
     final url = api;
     final response = await http.get(Uri.parse(url));
     final jsonData = json.decode(response.body);
