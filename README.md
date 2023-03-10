@@ -1,4 +1,4 @@
 # news_app
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Download Apk](https://github.com/navneetprajapati26/NewsApp/raw/main/apk_file/app-release.apk)
 - [Web preview ](https://navneetprajapati26.github.io/News_app_web-/#/)
