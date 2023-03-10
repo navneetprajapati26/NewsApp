@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/util/theem/colours.dart';
 import 'package:provider/provider.dart';
@@ -27,7 +28,7 @@ class _NewsScreenState extends State<NewsScreen> {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.keyboard_arrow_left_rounded,
             color: Colors.black,
           ),
@@ -41,35 +42,39 @@ class _NewsScreenState extends State<NewsScreen> {
       ),
       body: SafeArea(
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Expanded(
-                child: Stack(
+          child: (kIsWeb)
+              ? const Text("Sorry this Screen only can rendered in Android and iOS")
+              : Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    WebView(
-                      backgroundColor: Theme.of(context).colorScheme.background,
-                      javascriptMode: JavascriptMode.unrestricted,
-                      initialUrl: newsProvider.articles[newsProvider.index].url,
-                      onWebViewCreated: (controller) {
-                        this.controller = controller;
-                      },
-                      onPageStarted: (started) {
-                        setState(() {
-                          isLoading = false;
-                        });
-                      },
+                    Expanded(
+                      child: Stack(
+                        children: [
+                          WebView(
+                            backgroundColor:
+                                Theme.of(context).colorScheme.background,
+                            javascriptMode: JavascriptMode.unrestricted,
+                            initialUrl:
+                                newsProvider.articles[newsProvider.index].url,
+                            onWebViewCreated: (controller) {
+                              this.controller = controller;
+                            },
+                            onPageStarted: (started) {
+                              setState(() {
+                                isLoading = false;
+                              });
+                            },
+                          ),
+                          isLoading
+                              ? const Center(
+                                  child: Loading(),
+                                )
+                              : Stack(),
+                        ],
+                      ),
                     ),
-                    isLoading
-                        ? const Center(
-                            child: Loading(),
-                          )
-                        : Stack(),
                   ],
                 ),
-              ),
-            ],
-          ),
         ),
       ),
     );

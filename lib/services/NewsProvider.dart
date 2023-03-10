@@ -38,7 +38,7 @@ class NewsProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void getIndex(int index){
+  void getIndex(int index) {
     _index = index;
     notifyListeners();
   }

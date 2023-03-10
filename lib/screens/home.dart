@@ -108,6 +108,7 @@ class _HomeState extends State<Home> {
                                         .colorScheme
                                         .secondary),
                                 child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Row(
                                       mainAxisAlignment:
