@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:news_app/model/NewsArticaleModel.dart';
+import 'package:news_app/provider/NewsProvider.dart';
+import 'package:news_app/provider/ThemeProvider.dart';
 import 'package:news_app/screens/home.dart';
-import 'package:news_app/services/NewsProvider.dart';
-import 'package:news_app/services/ThemeProvider.dart';
-import 'package:news_app/util/loding.dart';
 import 'package:news_app/util/theem/colours.dart';
 import 'package:provider/provider.dart';
 
